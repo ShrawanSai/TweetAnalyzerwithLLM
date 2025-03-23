@@ -9,8 +9,6 @@ from sentiment_type import get_sentiment_class
 # Add this to the beginning of your generate function
 import nest_asyncio
 nest_asyncio.apply()
-os.environ["GEMINI_API_KEY"] = "AIzaSyCk19OxqS8m9kc-dM__TwSgsnON8qX1ciQ"
-
 
 # Configuration
 UPLOAD_FOLDER = 'static/uploads'
@@ -23,9 +21,6 @@ app.secret_key = 'your_secret_key_here'  # Required for flash messages
 
 # Create uploads directory if it doesn't exist
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
-
-# Set up Google Gemini API
-os.environ["GEMINI_API_KEY"] = "AIzaSyCk19OxqS8m9kc-dM__TwSgsnON8qX1ciQ"
 
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
